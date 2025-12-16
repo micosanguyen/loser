@@ -19,7 +19,7 @@ const char *message = "Hello from child!\n";
 
 WriteFile(hFile, message, strlen(message), &bytewrite, NULL);
 
-printf("Child: wrote");
+printf("Child: written\n");
 CloseHandle(hFile);
 
 return 0;

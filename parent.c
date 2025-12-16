@@ -15,7 +15,7 @@ int main(){
 
     // su dung handle lay duoc de write vao file 
     DWORD write;
-    WriteFile(hFile, "Parent\n", 8, &write, NULL);
+    WriteFile(hFile, "Hello from Parent!\n", 18, &write, NULL);
 
     // convert handle to string so we can pass to the child process
     char handleStr[20];
@@ -23,7 +23,7 @@ int main(){
     // convert du lieu va luu vao 1 buffer
     sprintf(handleStr, " %llu", (unsigned long long)hFile);
 
-    printf("fileHandle: %s", handleStr);
+    printf("fileHandle: %s\n", handleStr);
 
     // khai bao struct startup info va process info de khoi tao process con
     STARTUPINFO si = {sizeof(si)};
@@ -31,7 +31,7 @@ int main(){
 
     // convert du lieu cmdLine va luu vao buffer
     char cmdLine[150];
-    sprintf(cmdLine, "C:\\Users\\Administrator\\Desktop\\Project_C\\child.exe\\%s", handleStr);
+    sprintf(cmdLine, "C:\\Users\\Administrator\\Desktop\\Project_C\\child.exe%s", handleStr);
 
     //C:\Users\Administrator\Desktop\Project_C\child.exe
 
